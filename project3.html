@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 3: 3D Reconstruction for Counterfactual Learning</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1e2a38;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+      color: #1e2a38;
+    }
+
+    img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 20px 0;
+      color: #1e2a38;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>3D Reconstruction for Counterfactual Learning in Reinforcement Learning</h1>
+</header>
+
+<div class="container">
+  <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+
+  <h2>Overview</h2>
+  <p>
+    In vision-based reinforcement learning, an agent’s ability to learn from past experiences is often constrained by the specific trajectory it followed.
+    Our project aims to overcome this limitation by developing a framework for generating 3D reconstructions of an environment from a robot’s observations.
+    These reconstructions enable the synthesis of novel views—what the robot would have seen had it taken a different action or followed an alternative path.
+  </p>
+
+  <h2>Motivation</h2>
+  <p>
+    By reconstructing the scene in 3D, we allow for post hoc exploration of counterfactual trajectories.
+    For example, if the robot followed a suboptimal route during an episode, we can generate the observations it would have seen had it turned left instead of right.
+    These counterfactual observations can then be used to refine the agent's policy through contrastive learning,
+    offering a way to augment experience without requiring additional real-world data collection.
+  </p>
+
+  <h2>Methodology</h2>
+  <p>
+    The reconstruction pipeline takes in image sequences captured by the robot and builds a consistent 3D model of the environment.
+    Using this model, we simulate alternate camera poses corresponding to hypothetical trajectories.
+    This process effectively creates synthetic rollouts that are grounded in real observations,
+    allowing for robust policy improvement via contrastive reinforcement learning.
+  </p>
+
+  <img src="images/3d_reconstruction.png" alt="3D Reconstruction of Environment"/>
+  <img src="images/counterfactual_views.png" alt="Synthesized Counterfactual Observations"/>
+
+  <h2>My Role</h2>
+  <p>
+    I implemented the reconstruction algorithm, designed the camera-pose perturbation logic,
+    and integrated the system with an RL policy training loop.
+    This involved developing robust methods for geometric consistency, handling occlusion artifacts,
+    and designing efficient scene representation formats compatible with contrastive learning objectives.
+  </p>
+
+  <h2>Structure & Results</h2>
+  <p>
+    The document is structured according to the IMRD format, including a motivation for counterfactual learning in RL,
+    a description of the reconstruction method, and a discussion of how the generated samples improve policy performance.
+    Visual examples are used to illustrate both the reconstructed scene and the synthesized observations.
+  </p>
+
+  <h2>Skills Applied</h2>
+  <ul>
+    <li>3D Scene Reconstruction</li>
+    <li>Pose Perturbation and View Synthesis</li>
+    <li>Reinforcement Learning</li>
+    <li>Contrastive Learning</li>
+    <li>Geometric Computer Vision</li>
+    <li>Python, PyTorch, and NeRF-based Tools</li>
+  </ul>
+
+  <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+</div>
+
+</body>
+</html>
