@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Project 2: Uncertainty Quantification in RANS Models</title>
   <style>
@@ -66,10 +66,10 @@
   <h2>Overview</h2>
   <p>
     Accurate turbulence modeling remains one of the most persistent challenges in computational fluid dynamics.
-    While Reynolds-Averaged Navier-Stokes (RANS) models are widely used for their efficiency, their accuracy is limited
+    While Reynolds Averaged Navier Stokes (RANS) models are widely used for their efficiency, their accuracy is limited
     by empirical closures and unquantified uncertainties. Our project investigates how global epistemic uncertainty
-    quantification can be applied to RANS models to identify which internal parameters—such as model coefficients,
-    tensor shapes, and tensor orientations—are most suitable for calibration through machine learning.
+    quantification can be applied to RANS models to identify which internal parameters such as model coefficients,
+    tensor shapes, and tensor orientations are most suitable for calibration through machine learning.
   </p>
 
   <h2>Problem Setup</h2>
@@ -89,11 +89,11 @@
   <p>
     We conduct global sensitivity and uncertainty analysis, propagating input perturbations through the RANS solver
     and measuring output variance across time. This enables us to separate parameters that introduce irreducible error
-    from those whose influence may be corrected through data-driven modeling.
+    from those whose influence may be corrected through data driven modeling.
   </p>
 
   <p>
-    The ultimate goal is to inform the design of <strong>physics-informed neural networks (PINNs)</strong> that augment
+    The ultimate goal is to inform the design of <strong>physics informed neural networks (PINNs)</strong> that augment
     RANS models by learning corrections only where traditional modeling fails.
   </p>
 
@@ -105,14 +105,14 @@
   <p>
     My contribution involved designing the perturbation framework, implementing the uncertainty propagation pipeline,
     and analyzing the temporal evolution of prediction errors. This required integrating custom perturbation routines,
-    automating batch simulations, and post-processing time-dependent QoIs across ensemble runs.
+    automating batch simulations, and post processing time dependent QoIs across ensemble runs.
   </p>
 
   <h2>Impact</h2>
   <p>
     The results provide a principled way to identify which components of a turbulence model are most responsible for
-    inaccurate predictions—and which are worth targeting with machine learning. This work forms a foundation for future
-    development of hybrid RANS-ML models that retain physical structure while learning only the necessary corrections.
+    inaccurate predictions and which are worth targeting with machine learning. This work forms a foundation for future
+    development of hybrid RANS ML models that retain physical structure while learning only the necessary corrections.
   </p>
 
   <h2>Skills Applied</h2>
@@ -121,7 +121,7 @@
     <li>Uncertainty Quantification</li>
     <li>Global Sensitivity Analysis</li>
     <li>Scientific Python Programming</li>
-    <li>Physics-Informed Machine Learning</li>
+    <li>Physics Informed Machine Learning</li>
     <li>Technical Visualization and Data Analysis</li>
   </ul>
 
