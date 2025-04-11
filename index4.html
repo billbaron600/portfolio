@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 4: Reasoning-Aligned Preference Learning</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1e2a38;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+      color: #1e2a38;
+    }
+
+    img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 20px 0;
+      color: #1e2a38;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Reasoning-Aligned Preference Learning for VLMs</h1>
+</header>
+
+<div class="container">
+  <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+
+  <h2>Overview</h2>
+  <p>
+    As large vision-language models such as PaLI Gemma 3 advance in capability, they still struggle with producing arguments that are both persuasive and logically sound.
+    Our project introduces a new reinforcement learning framework called <strong>Reasoning-Aligned Preference Learning</strong>.
+    This method aims to improve a model’s reasoning by training a reward function on pairwise preferences collected from two distinct sources:
+    human annotators and advanced language models capable of identifying logical and statistical fallacies.
+  </p>
+
+  <h2>Motivation</h2>
+  <p>
+    The foundation of this approach is the understanding that strong arguments depend on both the truth of their premises
+    and the validity of the reasoning that connects those premises to the conclusion.
+    Humans are well suited to detecting unsound or implausible premises due to their real-world grounding and intuitive judgment.
+    In contrast, language models excel at recognizing structural flaws in reasoning, including circular logic, statistical misinterpretations, and hidden assumptions.
+    By combining preferences from both groups, we create a reward model that reflects both common sense and analytical rigor.
+  </p>
+
+  <h2>Methodology</h2>
+  <p>
+    This dual-source preference data is used to train a reward model capable of distinguishing high-quality reasoning from shallow fluency.
+    The reward model is then used to fine-tune the VLM through reinforcement learning,
+    encouraging the generation of outputs that demonstrate better argumentative structure, clarity, and logical coherence.
+  </p>
+
+  <img src="images/dual_source_preference.png" alt="Dual-source Preference Pipeline"/>
+  <img src="images/reward_model_training.png" alt="Reward Model Training"/>
+  <img src="images/alignment_results.png" alt="Before and After RLHF Tuning"/>
+
+  <h2>My Role</h2>
+  <p>
+    I designed the dual-source preference collection pipeline, built and trained the reward model,
+    and integrated the preference-based reinforcement learning loop with the vision-language model.
+    This included defining criteria for reasoning errors, designing annotation guidelines for humans and models,
+    and tuning the reward model to balance semantic fluency with logical quality.
+  </p>
+
+  <h2>Outcomes</h2>
+  <p>
+    The resulting model is better aligned with human values and logical standards,
+    capable of generating arguments that are not only compelling but also structurally sound.
+    Visual aids clarify how preferences from human and model sources interact during training and how these preferences influence the output behavior.
+  </p>
+
+  <h2>Skills Applied</h2>
+  <ul>
+    <li>Reinforcement Learning with Human Feedback (RLHF)</li>
+    <li>Reward Model Training</li>
+    <li>Vision-Language Model Fine-Tuning</li>
+    <li>Fallacy Detection and Argument Evaluation</li>
+    <li>Human-Model Comparative Preference Analysis</li>
+    <li>Python, PyTorch, Hugging Face, and RL Libraries</li>
+  </ul>
+
+  <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+</div>
+
+</body>
+</html>
