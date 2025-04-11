@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 2: Uncertainty Quantification in RANS Models</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1e2a38;
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+      color: #1e2a38;
+    }
+
+    img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin: 20px 0;
+      color: #1e2a38;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Uncertainty Quantification in Turbulence Modeling</h1>
+</header>
+
+<div class="container">
+  <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+
+  <h2>Overview</h2>
+  <p>
+    Accurate turbulence modeling remains one of the most persistent challenges in computational fluid dynamics.
+    While Reynolds-Averaged Navier-Stokes (RANS) models are widely used for their efficiency, their accuracy is limited
+    by empirical closures and unquantified uncertainties. Our project investigates how global epistemic uncertainty
+    quantification can be applied to RANS models to identify which internal parameters—such as model coefficients,
+    tensor shapes, and tensor orientations—are most suitable for calibration through machine learning.
+  </p>
+
+  <h2>Problem Setup</h2>
+  <p>
+    We focus on a <strong>temporally evolving stratified shear layer</strong>, a canonical benchmark problem that captures complex
+    flow features such as turbulence and density gradients. By systematically perturbing individual parameters within
+    the RANS framework, we assess their impact on the prediction of key quantities of interest (QoIs), such as velocity
+    profiles or mixing rates.
+  </p>
+
+  <p>
+    Parameters that lead to high errors but low predictive variance are flagged as strong candidates for calibration,
+    since they consistently degrade performance without alerting the model to its own uncertainty.
+  </p>
+
+  <h2>Methodology</h2>
+  <p>
+    We conduct global sensitivity and uncertainty analysis, propagating input perturbations through the RANS solver
+    and measuring output variance across time. This enables us to separate parameters that introduce irreducible error
+    from those whose influence may be corrected through data-driven modeling.
+  </p>
+
+  <p>
+    The ultimate goal is to inform the design of <strong>physics-informed neural networks (PINNs)</strong> that augment
+    RANS models by learning corrections only where traditional modeling fails.
+  </p>
+
+  <img src="images/stratified_shear_layer.png" alt="Stratified Shear Layer Visualization"/>
+  <img src="images/sensitivity_analysis_plot.png" alt="Global Sensitivity Analysis Plot"/>
+  <img src="images/error_evolution_plot.png" alt="Temporal Error Evolution"/>
+
+  <h2>My Role</h2>
+  <p>
+    My contribution involved designing the perturbation framework, implementing the uncertainty propagation pipeline,
+    and analyzing the temporal evolution of prediction errors. This required integrating custom perturbation routines,
+    automating batch simulations, and post-processing time-dependent QoIs across ensemble runs.
+  </p>
+
+  <h2>Impact</h2>
+  <p>
+    The results provide a principled way to identify which components of a turbulence model are most responsible for
+    inaccurate predictions—and which are worth targeting with machine learning. This work forms a foundation for future
+    development of hybrid RANS-ML models that retain physical structure while learning only the necessary corrections.
+  </p>
+
+  <h2>Skills Applied</h2>
+  <ul>
+    <li>Turbulence Modeling (RANS)</li>
+    <li>Uncertainty Quantification</li>
+    <li>Global Sensitivity Analysis</li>
+    <li>Scientific Python Programming</li>
+    <li>Physics-Informed Machine Learning</li>
+    <li>Technical Visualization and Data Analysis</li>
+  </ul>
+
+  <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+</div>
+
+</body>
+</html>
